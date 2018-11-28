@@ -1,31 +1,52 @@
 <template>
-  <div id="app">
-    <div id="nav">
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
+  <div class="container">
+    <div id="app">
+      <div class="row justify-content-center">
+        <div class="jumbotron col-12">
+          <h1 class="display-5">Playground for <img alt="Vue logo" height="50" src="./assets/logo.png">ue</h1>
+          <hr class="my-4">
+        </div>
+      </div>
+      <div class="border">
+        <navbar></navbar>
+        <router-view />
+      </div>
     </div>
-    <router-view/>
   </div>
 </template>
 
+<script>
+  import Navbar from "./components/Navbar.vue"
+  export default {
+    components: { Navbar }
+  }
+</script>
+
 <style>
-#app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-}
-#nav {
-  padding: 30px;
-}
+  .border {
+    border: 1px transparent grey;
+    border-radius: 4px;
+  }
 
-#nav a {
-  font-weight: bold;
-  color: #2c3e50;
-}
+  #app {
+    /* font-family: 'Avenir', Helvetica, Arial, sans-serif; */
+    font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-align: center;
+    color: #2c3e50;
+  }
 
-#nav a.router-link-exact-active {
-  color: #42b983;
-}
+  #nav {
+    padding: 30px;
+  }
+
+  #nav a {
+    font-weight: bold;
+    color: #2c3e50;
+  }
+
+  #nav a.router-link-exact-active {
+    color: #42b983;
+  }
 </style>
