@@ -1,16 +1,14 @@
 <template>
-  <div class="container">
-    <div id="app">
-      <div class="row justify-content-center">
-        <div class="jumbotron col-12">
-          <h1 class="display-5">Playground for <img alt="Vue logo" height="50" src="./assets/logo.png">ue</h1>
-          <hr class="my-4">
-        </div>
+  <div id="app" class="container">
+    <div class="row justify-content-center">
+      <div class="jumbotron col-12">
+        <h1 class="display-5">Playground for <img alt="Vue logo" height="50" src="./assets/logo.png">ue</h1>
+        <hr class="my-4">
       </div>
-      <div class="border">
-        <navbar></navbar>
-        <router-view />
-      </div>
+    </div>
+    <div class="border text-left">
+      <navbar></navbar>
+      <router-view />
     </div>
   </div>
 </template>
@@ -25,16 +23,17 @@
 <style>
   .border {
     border: 1px transparent grey;
-    border-radius: 4px;
+    border-radius: 5px;
   }
 
   #app {
-    /* font-family: 'Avenir', Helvetica, Arial, sans-serif; */
+    font-family: 'Avenir', Helvetica, Arial, sans-serif;
     font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     text-align: center;
     color: #2c3e50;
+    padding-block-end: 2rem;
   }
 
   #nav {

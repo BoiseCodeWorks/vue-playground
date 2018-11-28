@@ -4,8 +4,8 @@
             <li class="nav-item" @click="active = 'home'; $router.push('/')">
                 <a class="nav-link" :class="activeTab('home')">Home</a>
             </li>
-            <li class="nav-item" @click="active = 'about'; $router.push('/about')">
-                <a class="nav-link" :class="activeTab('about')">About</a>
+            <li class="nav-item" @click="active = 'start'; $router.push('/start')">
+                <a class="nav-link" :class="activeTab('start')">Start</a>
             </li>
         </ul>
     </div>
@@ -34,5 +34,16 @@
 
 
 <style scoped>
+    .nav-item {
+        background-color: rgb(28, 140, 209);
+        border-radius: 5px;
+        color: white;
+        cursor: pointer;
+    }
 
+    .nav-item:hover {
+        background-color: lightblue;
+        border-radius: 5px;
+        color: inherit;
+    }
 </style>
