@@ -2,10 +2,16 @@
     <div class="navbar">
         <ul class="nav nav-tabs">
             <li class="nav-item" @click="active = 'home'; $router.push('/')">
-                <a class="nav-link" :class="activeTab('home')">Home</a>
+                <a class="nav-link" :class="{active: activeTab('home')}">Home</a>
             </li>
             <li class="nav-item" @click="active = 'start'; $router.push('/start')">
-                <a class="nav-link" :class="activeTab('start')">Start</a>
+                <a class="nav-link" :class="{active: activeTab('start')}">Start</a>
+            </li>
+            <li class="nav-item" @click="active = 'expressions'; $router.push('/expressions')">
+                <a class="nav-link" :class="{active: activeTab('expressions')}">Expressions</a>
+            </li>
+            <li class="nav-item" @click="active = 'bindings'; $router.push('/bindings')">
+                <a class="nav-link" :class="{active: activeTab('bindings')}">Bindings</a>
             </li>
         </ul>
     </div>
@@ -17,7 +23,6 @@
         name: 'navbar',
         data() {
             return {
-                active: "home"
             }
         },
         computed: {
@@ -25,7 +30,7 @@
         },
         methods: {
             activeTab(curr) {
-                return curr == this.active ? 'active' : ""
+                return curr == this.$route.name
             }
         },
         components: {}

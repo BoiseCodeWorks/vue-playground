@@ -5,14 +5,12 @@
         <h1>Welcome to the Vue Playground</h1>
         <p>The vue Playground is a simple tool to help get you introduced to the design patterns and
           specific workings of the Vue framework. Along the way you will likely find things that will take you out of
-          the
-          comfort zone you are used to with vanilla javascript. The organization, tooling, and design patterns that
+          the comfort zone you are used to with vanilla javascript. The organization, tooling, and design patterns that
           promote better programming practices introduce a learning curve, but given time, is well worth learning.</p>
         <p>Challenges that are difficult to effectively overcome without a framework become easier to
           manage and conquer within a framework such as Vue. Couple this power with the speed that Vue gives us as
           developers and large full scale applications become far more feasible all while keeping our code base clean
-          and
-          organized.</p>
+          and organized.</p>
         <p>For more on what Vue has to offer check out the documents at <a href="https://vuejs.org/">Vue.js</a></p>
         <p>For a quick reference guide on Vue Syntax check out the cheat sheets at <a href="https://www.vuemastery.com/vue-cheat-sheet/">Vue
             Mastery</a></p>
@@ -27,11 +25,10 @@
         <p>To get to these exercises, open up the project in vs code, open the corresponding file:
           <pre class="language-html">
             <code>
-              /src/components/ExerciseOne.vue
+              /src/components/ExpressionsExercise.vue
             </code>
           </pre>
-          Now look for the section of the HTML template marked Exercises. On some occasions you will need to edit the
-          code of the component to complete the exercise.
+          On some occasions you will need to edit the code of the component to complete the exercise.
           <pre class="language-html">
           <code>
             {{code}}

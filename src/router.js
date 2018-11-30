@@ -14,11 +14,22 @@ export default new Router({
     {
       path: '/start',
       name: 'start',
-      // route level code-splitting
-      // this generates a separate chunk (start.[hash].js) for this route
-      // which is lazy-loaded when the route is visited.
       component: function () {
-        return import(/* webpackChunkName: "about" */ './views/Start.vue')
+        return import(/* webpackChunkName: "start" */ './views/Start.vue')
+      }
+    },
+    {
+      path: '/expressions',
+      name: 'expressions',
+      component: function () {
+        return import(/* webpackChunkName: "expressions" */ './views/Expressions.vue')
+      }
+    },
+    {
+      path: '/bindings',
+      name: 'bindings',
+      component: function () {
+        return import(/* webpackChunkName: "bindings" */ './views/Bindings.vue')
       }
     }
   ]
