@@ -22,7 +22,7 @@
 
 <style>
   .border {
-    border: 1px transparent grey;
+    border: 1px solid rgba(154, 154, 156, .4);
     border-radius: 5px;
   }
 

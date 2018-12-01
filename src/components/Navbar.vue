@@ -13,6 +13,9 @@
             <li class="nav-item" @click="active = 'bindings'; $router.push('/bindings')">
                 <a class="nav-link" :class="{active: activeTab('bindings')}">Bindings</a>
             </li>
+            <li class="nav-item" @click="active = 'looping'; $router.push('/looping')">
+                <a class="nav-link" :class="{active: activeTab('looping')}">Looping</a>
+            </li>
         </ul>
     </div>
 </template>
