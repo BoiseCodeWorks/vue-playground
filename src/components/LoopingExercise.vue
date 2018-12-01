@@ -7,22 +7,37 @@
                     <p>Use the v-for directive to loop over the "players" property on the components data. In the
                         curlies inside of the template for each player we want to access each property on the player
                         object to put the value into our html.</p>
-                    <div class="player-card text-center" v-for="player in players">
+                    <p>Then use the index to print the players place in the collection.</p>
+                    <!-- add the v-for to player-card -->
+                    <div class="player-card text-center">
+                        <h5> {{
+                            <!--code here--> }}</h5>
                         <div>
                             <img class="img" src="" />
                         </div>
                         <div>
-                            <span class="p-2">{{
+                            <span>{{
                                 <!--code here-->}}</span>
                         </div>
                         <div>
-                            <span class="p-2">{{
+                            <span>{{
                                 <!--code here--> }}</span>
                         </div>
                         <div>
-                            <span class="p-2">{{
+                            <span>{{
                                 <!--code here--> }}</span>
                         </div>
+                    </div>
+                </div>
+                <div class="border p-1">
+                    <h5>Looping over an Objects Properties</h5>
+                    <p>Use the v-for directive to loop over the "blog" property on the comments data. In the curlies
+                        inside of the template for each property on the object we want to print the key(property name)
+                        and value contained at that key.</p>
+                    <div class="blog" v-for="(value, key) in blog">
+                        <p>{{
+                            <!--code here-->}}: {{
+                            <!--code here-->}}</p>
                     </div>
                 </div>
             </div>
@@ -36,6 +51,11 @@
         name: 'looping-exercise',
         data() {
             return {
+                blog: {
+                    title: "Using v-for in Vue",
+                    description: "How to use a v-for directive in Vue.",
+                    author: "D$"
+                },
                 players: [
                     {
                         photo: "https://robohash.org/D$",
@@ -64,6 +84,7 @@
 <style scoped>
     .player-card {
         border: 1px solid rgba(154, 154, 156, .4);
+        background-color: rgba(154, 154, 156, .4);
         margin: 1rem;
         border-radius: 5px;
     }

@@ -14,7 +14,7 @@
                 <pre>
                     <code class="language-html">
                         &lt;p&gt;
-                            &lt;Results for message: <span>{{ val3 }}</span>
+                            Results for message: <span>{{ val3 }}</span>
                         &lt;/p&gt;
                     </code>
                 </pre>

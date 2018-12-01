@@ -16,6 +16,9 @@
             <li class="nav-item" @click="active = 'looping'; $router.push('/looping')">
                 <a class="nav-link" :class="{active: activeTab('looping')}">Looping</a>
             </li>
+            <li class="nav-item" @click="active = 'computed-properties'; $router.push('/computed-properties')">
+                <a class="nav-link" :class="{active: activeTab('computed-properties')}">Computed Properties</a>
+            </li>
         </ul>
     </div>
 </template>

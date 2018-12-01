@@ -3,6 +3,7 @@
         <div class="row">
             <div class="col-12">
                 <h1>Looping</h1>
+                <h5>Looping over an Array</h5>
                 <p>One of the key features of Vue is the ability to easily repeat a snippeet of html for each index in
                     an array or each property in an object. In our components data we have an array stored on the
                     property "players". We can use the v-for directive to automatically loop over the array and utilize
@@ -95,6 +96,57 @@
                 </pre>
                 <p>Note we are using data binding between element tags with the double curlies {{ val }}, and : to
                     provide binding within element attribute values on the image.</p>
+                <p>We can also gain access to the current index as the loop iterates. We can use a parenthesis to do
+                    this. The first thing in the parenthesis is always the item itself, the second is always the index
+                    or key. Like so:</p>
+                <pre>
+                    <code class="language-html">
+                        &lt;div class="player-card" v-for="(player, index) in players"&gt;
+                            &lt;h5&gt;Player {{ index }}&lt;/h5&gt;
+                            &lt;div&gt;
+                                &lt;img :src="player.photo" /&gt;
+                            &lt;/div&gt;
+                            &lt;div&gt;
+                                &lt;span&gt;{{player.name}}&lt;/span&gt;
+                            &lt;/div&gt;
+                            &lt;div&gt;
+                                &lt;span&gt;{{player.position}}&lt;/span&gt;
+                            &lt;/div&gt;
+                            &lt;div&gt;
+                                &lt;span&gt;{{player.number}}&lt;/span&gt;
+                            &lt;/div&gt;
+                        &lt;/div&gt;
+                    </code>
+                </pre>
+                <p>Results: </p>
+                <div class="player-card text-center" v-for="(player, index) in players">
+                    <h5>Player {{index + 1}}</h5>
+                    <div>
+                        <img class="img" :src="player.photo" />
+                    </div>
+                    <div>
+                        <span>{{player.name}}</span>
+                    </div>
+                    <div>
+                        <span>{{player.position}}</span>
+                    </div>
+                    <div>
+                        <span>{{player.number}}</span>
+                    </div>
+                </div>
+                <h5>Looping over an Objects Properties</h5>
+                <p>In our components data we have an object with the properties "title", "description", "author". We
+                    can use the v-for directive to automatically loop over the objects properties and gain access
+                    to the key and value in the current iteration to print.</p>
+                <pre>
+                    <code class="language-html">
+                        &lt;div class="blog" v-for="(value, key) in blog"&gt;
+                            &lt;p&gt;
+                                {{val2}}
+                            &lt;/p&gt;
+                        &lt;/div&gt;
+                    </code>
+                </pre>
             </div>
             <exercise></exercise>
         </div>
@@ -108,12 +160,37 @@
         data() {
             return {
                 val: "{{ }}",
-                players: [],
+                val2: "{{ key }}: {{ value }}",
+                index: "{{ index + 1 }}",
                 player: {
                     name: '{{ player.name }}',
                     position: '{{ player.position }}',
                     number: '{{ player.number }}'
-                }
+                },
+                blog: {
+                    title: "Using v-for in Vue",
+                    description: "How to use a v-for directive in Vue.",
+                    author: "D$"
+                },
+                players: [
+                    {
+                        photo: "https://robohash.org/D$",
+                        name: "D$",
+                        position: "WR",
+                        number: 4
+                    },
+                    {
+                        photo: "https://robohash.org/Mark",
+                        name: "Mark",
+                        position: "TE",
+                        number: 13
+                    },
+                    {
+                        photo: "https://robohash.org/Jake",
+                        name: "Jake",
+                        position: "QB",
+                        number: 1
+                    }]
             }
         },
         computed: {},
@@ -124,5 +201,14 @@
 
 
 <style scoped>
+    .player-card {
+        border: 1px solid rgba(154, 154, 156, .4);
+        background-color: rgba(154, 154, 156, .4);
+        margin: 1rem;
+        border-radius: 5px;
+    }
 
+    .img {
+        height: 10rem;
+    }
 </style>

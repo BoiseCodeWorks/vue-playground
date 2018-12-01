@@ -36,7 +36,14 @@ export default new Router({
       path: '/looping',
       name: 'looping',
       component: function () {
-        return import(/* webpackChunkName: "bindings" */ './views/Looping.vue')
+        return import(/* webpackChunkName: "looping" */ './views/Looping.vue')
+      }
+    },
+    {
+      path: '/computed-properties',
+      name: 'computed-properties',
+      component: function () {
+        return import(/* webpackChunkName: "computed-properties" */ './views/ComputedProperties.vue')
       }
     }
   ]
