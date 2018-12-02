@@ -46,7 +46,7 @@
                         &lt;div class="player-card"&gt;
                             &lt;button class="btn btn-xs btn-danger remove"&gt;Remove&lt;/button&gt;
                             &lt;div&gt;
-                                &lt;img ng-src="player.photo" /&gt;
+                                &lt;img :src="player.photo" /&gt;
                             &lt;/div&gt;
                             &lt;div&gt;
                                 &lt;span&gt;{{player.name}}&lt;/span&gt;

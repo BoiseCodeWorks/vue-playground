@@ -45,6 +45,13 @@ export default new Router({
       component: function () {
         return import(/* webpackChunkName: "computed-properties" */ './views/ComputedProperties.vue')
       }
+    },
+    {
+      path: '/conditional-rendering',
+      name: 'conditional-rendering',
+      component: function () {
+        return import(/* webpackChunkName: "conditional-rendering" */ './views/ConditionalRendering.vue')
+      }
     }
   ]
 })

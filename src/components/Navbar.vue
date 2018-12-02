@@ -19,6 +19,9 @@
             <li class="nav-item" @click="active = 'computed-properties'; $router.push('/computed-properties')">
                 <a class="nav-link" :class="{active: activeTab('computed-properties')}">Computed Properties</a>
             </li>
+            <li class="nav-item" @click="active = 'conditional-rendering'; $router.push('/conditional-rendering')">
+                <a class="nav-link" :class="{active: activeTab('conditional-rendering')}">Conditional Rendering</a>
+            </li>
         </ul>
     </div>
 </template>
