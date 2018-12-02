@@ -44,7 +44,6 @@
                 <pre>
                     <code class="language-html">
                         &lt;div class="player-card"&gt;
-                            &lt;button class="btn btn-xs btn-danger remove"&gt;Remove&lt;/button&gt;
                             &lt;div&gt;
                                 &lt;img :src="player.photo" /&gt;
                             &lt;/div&gt;
