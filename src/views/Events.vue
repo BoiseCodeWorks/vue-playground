@@ -32,7 +32,7 @@
                     </code>
                 </pre>
                 <p>Result:</p>
-                <button class="btn btn-primary" @click="counter += 1">Add 1</button>
+                <button class="btn btn-primary m-2" @click="counter += 1">Add 1</button>
                 <p>The button has been clicked {{ counter }} times.</p>
                 <h5>Events Calling A Method</h5>
                 <p>Using a method to handle what happens can be nice and becomes essential if there is much logic going
@@ -64,7 +64,7 @@
                     </code>
                 </pre>
                 <p>Result:</p>
-                <button class="btn btn-primary" @click="greet">Greet</button>
+                <button class="btn btn-primary m-2" @click="greet">Greet</button>
             </div>
             <exercise></exercise>
         </div>
