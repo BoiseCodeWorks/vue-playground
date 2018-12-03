@@ -41,7 +41,7 @@
         },
         computed: {},
         methods: {
-            //create a method called
+            //create a method called "greet"
         },
         components: {}
     }

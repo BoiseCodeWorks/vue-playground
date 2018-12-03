@@ -1,5 +1,5 @@
 <template>
-  <div id="app" class="container">
+  <div id="app" class="container outside">
     <div class="row justify-content-center">
       <div class="jumbotron col-12">
         <h1 class="display-5">Playground for <img alt="Vue logo" height="50" src="./assets/logo.png">ue</h1>
@@ -47,5 +47,9 @@
 
   #nav a.router-link-exact-active {
     color: #42b983;
+  }
+
+  .outside {
+    max-width: 75%;
   }
 </style>
