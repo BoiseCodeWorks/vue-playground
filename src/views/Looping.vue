@@ -4,7 +4,7 @@
             <div class="col-12">
                 <h1>Looping</h1>
                 <h5>Looping over an Array</h5>
-                <p>One of the key features of Vue is the ability to easily repeat a snippeet of html for each index in
+                <p>One of the key features of Vue is the ability to easily repeat a snippet of html for each index in
                     an array or each property in an object. In our components data we have an array stored on the
                     property "players". We can use the v-for directive to automatically loop over the array and utilize
                     the item in the current iteration to build or populate the subsequent html. We are in essence,

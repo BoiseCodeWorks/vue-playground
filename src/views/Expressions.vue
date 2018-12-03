@@ -3,12 +3,12 @@
         <div class="row">
             <div class="col-12">
                 <h1>Expressions</h1>
-                <p>As you continue through this lesson, you will see some terminology that you may or may not of
+                <p>As you continue through this lesson, you will see some terminology that you may or may not have
                     encountered in
                     the past.</p>
                 <h3>Vue helps you bridge the gap between html, css, and js</h3>
                 <p>A cool and helpful feature of Vue is the ability to use Expressions in our HTML</p>
-                <p>Example: 2 + 2 = '{{ 2 + 2 }}'</p>
+                <p>Example: {{handleEg}}</p>
                 <p>Vue parses your HTML and looks specifically for the double curlies(aka: handlebars, mustache
                     brackets). When Vue comes across a set of these brackets it essentially says this:
                     Pause HTML {{ val }} Restart HTML.</p>
@@ -82,7 +82,8 @@
                     name: '{{ player.name }}',
                     position: '{{ player.position }}',
                     number: '{{ player.number }}'
-                }
+                },
+                handleEg: '{{2 + 2}}'
             }
         },
         computed: {},
