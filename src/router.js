@@ -52,6 +52,13 @@ export default new Router({
       component: function () {
         return import(/* webpackChunkName: "conditional-rendering" */ './views/ConditionalRendering.vue')
       }
+    },
+    {
+      path: '/events',
+      name: 'events',
+      component: function () {
+        return import(/* webpackChunkName: "events" */ './views/Events.vue')
+      }
     }
   ]
 })

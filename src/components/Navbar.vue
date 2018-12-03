@@ -22,6 +22,9 @@
             <li class="nav-item" @click="active = 'conditional-rendering'; $router.push('/conditional-rendering')">
                 <a class="nav-link" :class="{active: activeTab('conditional-rendering')}">Conditional Rendering</a>
             </li>
+            <li class="nav-item" @click="active = 'events'; $router.push('/events')">
+                <a class="nav-link" :class="{active: activeTab('events')}">Events</a>
+            </li>
         </ul>
     </div>
 </template>
