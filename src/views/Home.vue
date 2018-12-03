@@ -18,7 +18,7 @@
       <span class="border-bottom col-12 pt-3"></span>
       <div class="col-12">
         <h1>Exercises</h1>
-        <p>The Vue Playground is a teaching too and is meant to be modified, dont be afraid to break things! If
+        <p>The Vue Playground is a teaching tool and is meant to be modified, dont be afraid to break things! If
           something is broken, remember to read your error messages to determine what broke.</p>
         <p>Each section of the playground is comparmentalized and offers a set of challenges that can be completed to
           solidify your understanding of Vue practices.</p>
