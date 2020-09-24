@@ -38,7 +38,7 @@
             property on the object we want to print the key(property name) and
             value contained at that key.
           </p>
-          <div class="blog" v-for="(value, key) in blog">
+          <div class="blog" v-for="(value, key) in blog" :key="key">
             <p>{{}}: {{}}</p>
           </div>
         </div>
@@ -49,10 +49,11 @@
 
 
 <script>
+import { reactive } from "vue";
 export default {
   name: "looping-exercise",
-  data() {
-    return {
+  setup() {
+    const state = reactive({
       blog: {
         title: "Using v-for in Vue",
         description: "How to use a v-for directive in Vue.",
@@ -78,6 +79,9 @@ export default {
           number: 1,
         },
       ],
+    });
+    return {
+      state,
     };
   },
 };

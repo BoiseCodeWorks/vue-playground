@@ -46,7 +46,6 @@ like:
 
 <script>
 // @ is an alias to /src
-import HelloWorld from "@/components/HelloWorld.vue";
 import { reactive } from "vue";
 export default {
   name: "home",
@@ -71,9 +70,6 @@ export default {
     return {
       state,
     };
-  },
-  components: {
-    HelloWorld,
   },
 };
 </script>
