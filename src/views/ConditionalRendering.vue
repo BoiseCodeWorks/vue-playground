@@ -143,6 +143,7 @@
 
 
 <script>
+import { reactive } from "vue";
 import Exercise from "../components/ConditionalRenderingExercise.vue";
 export default {
   name: "conditional-rendering",

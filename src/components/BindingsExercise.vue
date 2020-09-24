@@ -47,7 +47,6 @@
 
 
 <script>
-let why = "{{ }}";
 import { reactive } from "vue";
 export default {
   name: "binding-exercises",

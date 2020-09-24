@@ -35,17 +35,18 @@
 
 
 <script>
+import { reactive } from "vue";
 export default {
   name: "events-exercise",
-  data() {
-    return {
+  setup() {
+    const state = reactive({
       //add property called "counter"
       //add property called "greeting"
+      //create a method called "greet"
+    });
+    return {
+      state,
     };
-  },
-  computed: {},
-  methods: {
-    //create a method called "greet"
   },
   components: {},
 };

@@ -90,6 +90,7 @@
 </template>
 
 <script>
+import { reactive } from "vue";
 import Exercise from "../components/ExpressionsExercise.vue";
 export default {
   name: "expressions",
