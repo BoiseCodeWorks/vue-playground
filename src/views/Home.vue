@@ -45,14 +45,14 @@ like:
 
 
 <script>
-  // @ is an alias to /src
-  import HelloWorld from '@/components/HelloWorld.vue'
-
-  export default {
-    name: 'home',
-    data() {
-      return {
-        code: `
+// @ is an alias to /src
+import HelloWorld from "@/components/HelloWorld.vue";
+import { reactive } from "vue";
+export default {
+  name: "home",
+  setup() {
+    const state = reactive({
+      code: `
     <div class="vue-exercises">
       <h1>Exercises</h1>
       <div class="challenges">
@@ -66,18 +66,21 @@ like:
         </ul>
       </div>
     </div>
-        `
-      }
-    },
-    components: {
-      HelloWorld
-    }
-  }
+        `,
+    });
+    return {
+      state,
+    };
+  },
+  components: {
+    HelloWorld,
+  },
+};
 </script>
 
 <style>
-  .home {
-    padding-left: 1.5rem;
-    padding-right: 1.5rem;
-  }
+.home {
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+}
 </style>
