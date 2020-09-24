@@ -11,9 +11,7 @@
             out what happens below. Now go change the value of message in our
             components script area and see what happens.
           </p>
-          <p>
-            {{}}
-          </p>
+          <p>{{}}</p>
         </div>
         <div class="border p-1">
           <h5>Two Way Data Binding</h5>
@@ -25,6 +23,7 @@
           </p>
           <!-- add a v-model to this input below called "myName"-->
           <input />
+          <!-- reference "myName" -->
           <p>{{}}</p>
         </div>
         <div class="border p-1">
@@ -48,6 +47,7 @@
 
 
 <script>
+let why = "{{ }}";
 import { reactive } from "vue";
 export default {
   name: "binding-exercises",

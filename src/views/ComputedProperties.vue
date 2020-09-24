@@ -21,16 +21,15 @@
                     <code class="language-javascript">
                         export default {
                             name: 'computed-properties-exercise',
-                            data() {
-                                return {
-                                    message: "Hello World!"
-                                }
-                            },
-                            computed: {
-                                reversedMessage() {
-                                    return this.message.split("").reverse().join('')
-                                }
-                            },
+                            setup() {
+                              const state = reactive({
+                                message: "Hello World!"
+                                reversedMessage: computed(()=> this.message.split("").reverse().join('')) 
+                            })
+                            return {
+                              state
+                            }
+                          }
                         }
                     </code>
                 </pre>
@@ -51,18 +50,21 @@
 
 
 <script>
-import { computed } from "vue";
+import { computed, reactive } from "vue";
 import Exercise from "../components/ComputedPropertiesExercise.vue";
 export default {
   name: "computed-properties",
   setup() {
-    return {
+    const state = reactive({
       val: "{{ message }}",
       val2: "{{ reversedMessage }}",
       message: "Hello World!",
       reversedMessage: computed(() => {
         this.message.split("").reverse().join("");
       }),
+    });
+    return {
+      state,
     };
   },
   components: { Exercise },

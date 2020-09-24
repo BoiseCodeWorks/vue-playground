@@ -27,9 +27,12 @@
                     <code class="language-javascript">
                         export default {
                             name: 'bindings-exercise',
-                            data() {
-                                return {
+                            setup() {
+                              const state = reactive({
                                     message: "Hello World!"
+                              })
+                                return {
+                                  state
                                 }
                             }
                         }
@@ -57,13 +60,16 @@
         <pre>
                     <code class="language-javascript">
                         export default {
-                            name: 'bindings-exercise',
-                            data() {
-                                return {
-                                    //typing in the input changes the value of name
-                                    myName: "Type your name here"
-                                }
-                            }
+                           name: 'bindings-exercise',
+                           setup() {
+                             const state = reactive({
+                                   //typing in the input changes the value of name
+                                   myName: "Type your name here"
+                             })
+                             return {
+                               state
+                             }
+                           }
                         }
                     </code>
                 </pre>
@@ -89,10 +95,13 @@
                     <code class="language-javascript">
                         export default {
                             name: 'bindings-exercise',
-                            data() {
-                                return {
+                            setup() {
+                              const state = reactive({
                                     //Change the value to true
                                     isActive: false
+                              })
+                                return {
+                                  state
                                 }
                             }
                         }
