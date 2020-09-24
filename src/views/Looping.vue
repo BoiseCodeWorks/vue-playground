@@ -62,9 +62,9 @@
                     <code class="language-javascript">
                         export default {
                             name: 'looping-exercise',
-                            data() {
-                                return {
-                                    players: [
+                            setup() {
+                                const state = reactive({
+                                  players: [
                                     {
                                         photo: "https://robohash.org/D$",
                                         name: "D$",
@@ -82,7 +82,10 @@
                                         name: "Jake",
                                         position: "QB",
                                         number: 1
-                                    }]
+                                    }]  
+                                })
+                                return {
+                                    state
                                 }
                             }
                         }
