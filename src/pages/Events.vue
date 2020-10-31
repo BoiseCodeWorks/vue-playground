@@ -63,9 +63,10 @@
     }
   },
 }</code></pre>
-        <p>Result:</p>
         <button class="btn btn-primary btn-outline m-2" @click="greet">Greet</button>
       </div>
+      <hr>
+      <h1>Exercise</h1>
       <exercise></exercise>
     </div>
   </div>
