@@ -42,6 +42,8 @@
           and returning the result for us to use as many times as needed in the
           component.
         </p>
+        <hr />
+        <h1>Exercise</h1>
         <exercise></exercise>
       </div>
     </div>

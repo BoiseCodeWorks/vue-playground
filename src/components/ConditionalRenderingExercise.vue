@@ -12,16 +12,16 @@
           <!-- add code to element below -->
           <div class="player-card text-center">
             <div>
-              <img :src="player.photo" />
+              <img :src="state.player.photo" />
             </div>
             <div>
-              <span>{{ player.name }}</span>
+              <span>{{ state.player.name }}</span>
             </div>
             <div>
-              <span>{{ player.position }}</span>
+              <span>{{ state.player.position }}</span>
             </div>
             <div>
-              <span>{{ player.number }}</span>
+              <span>{{ state.player.number }}</span>
             </div>
           </div>
           <p>Now, set it to true. The element should return to the page.</p>
@@ -40,16 +40,16 @@
           <!-- add code to element below -->
           <div class="player-card text-center">
             <div>
-              <img :src="player.photo" />
+              <img :src="state.player.photo" />
             </div>
             <div>
-              <span>{{ player.name }}</span>
+              <span>{{ state.player.name }}</span>
             </div>
             <div>
-              <span>{{ player.position }}</span>
+              <span>{{ state.player.position }}</span>
             </div>
             <div>
-              <span>{{ player.number }}</span>
+              <span>{{ state.player.number }}</span>
             </div>
           </div>
           <p>Now, set it to true. The element should return to the page.</p>
@@ -89,18 +89,18 @@
             Change the v-if directive to a v-show on the "player-card" element
             below.
           </p>
-          <div class="player-card text-center area" v-show="false">
+          <div class="player-card text-center area" v-show="state.player.id">
             <div>
-              <img :src="player.photo" />
+              <img :src="state.player.photo" />
             </div>
             <div>
-              <span>{{ player.name }}</span>
+              <span>{{ state.player.name }}</span>
             </div>
             <div>
-              <span>{{ player.position }}</span>
+              <span>{{ state.player.position }}</span>
             </div>
             <div>
-              <span>{{ player.number }}</span>
+              <span>{{ state.player.number }}</span>
             </div>
           </div>
           <p>
@@ -118,6 +118,8 @@
 
 
 <script>
+import { reactive } from "vue";
+
 export default {
   name: "condtional-rendering-exercise",
   setup() {

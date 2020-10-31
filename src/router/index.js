@@ -1,60 +1,44 @@
 import { createRouter, createWebHashHistory } from 'vue-router'
-import Home from '../views/Home.vue'
+
+function loadPage(path) {
+  return () => import(`../pages/${path}`)
+}
 
 const routes = [
   {
     path: '/',
     name: 'home',
-    component: Home
-  },
-  {
-    path: '/start',
-    name: 'start',
-    component: function () {
-      return import(/* webpackChunkName: "start" */ '../views/Start.vue')
-    }
+    component: loadPage("Home.vue")
   },
   {
     path: '/expressions',
     name: 'expressions',
-    component: function () {
-      return import(/* webpackChunkName: "expressions" */ '../views/Expressions.vue')
-    }
+    component: loadPage("Expressions.vue")
   },
   {
     path: '/bindings',
     name: 'bindings',
-    component: function () {
-      return import(/* webpackChunkName: "bindings" */ '../views/Bindings.vue')
-    }
+    component: loadPage("Bindings.vue")
   },
   {
     path: '/looping',
     name: 'looping',
-    component: function () {
-      return import(/* webpackChunkName: "looping" */ '../views/Looping.vue')
-    }
+    component: loadPage("Looping.vue")
   },
   {
     path: '/computed-properties',
     name: 'computed-properties',
-    component: function () {
-      return import(/* webpackChunkName: "computed-properties" */ '../views/ComputedProperties.vue')
-    }
+    component: loadPage("ComputedProperties.vue")
   },
   {
     path: '/conditional-rendering',
     name: 'conditional-rendering',
-    component: function () {
-      return import(/* webpackChunkName: "conditional-rendering" */ '../views/ConditionalRendering.vue')
-    }
+    component: loadPage("ConditionalRendering.vue")
   },
   {
     path: '/events',
     name: 'events',
-    component: function () {
-      return import(/* webpackChunkName: "events" */ '../views/Events.vue')
-    }
+    component: loadPage("Events.vue")
   }
 ]
 

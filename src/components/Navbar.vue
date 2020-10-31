@@ -1,122 +1,42 @@
 <template>
-  <div class="navbar">
-    <ul class="nav nav-tabs">
-      <li
-        class="nav-item"
-        @click="
-          active = 'home';
-          $router.push('/');
-        "
+  <div class="navbar navbar-inverse mb-4">
+    <div class="navbar-brand">
+      <router-link class="no-high" :to="{ name: 'home' }">
+        <img src="../assets/logo.png" alt="logo" height="40" />ue Playground
+      </router-link>
+    </div>
+    <div class="links">
+      <router-link :to="{ name: 'expressions' }">Expressions</router-link>
+      <router-link :to="{ name: 'bindings' }">Bindings</router-link>
+      <router-link :to="{ name: 'looping' }">Looping</router-link>
+      <router-link :to="{ name: 'computed-properties' }"
+        >Computed Properties</router-link
       >
-        <a class="nav-link" :class="{ active: activeTab('home') }">Home</a>
-      </li>
-      <li
-        class="nav-item"
-        @click="
-          active = 'start';
-          $router.push('/start');
-        "
-      >
-        <a class="nav-link" :class="{ active: activeTab('start') }">Start</a>
-      </li>
-      <li
-        class="nav-item"
-        @click="
-          active = 'expressions';
-          $router.push('/expressions');
-        "
-      >
-        <a class="nav-link" :class="{ active: activeTab('expressions') }"
-          >Expressions</a
-        >
-      </li>
-      <li
-        class="nav-item"
-        @click="
-          active = 'bindings';
-          $router.push('/bindings');
-        "
-      >
-        <a class="nav-link" :class="{ active: activeTab('bindings') }"
-          >Bindings</a
-        >
-      </li>
-      <li
-        class="nav-item"
-        @click="
-          active = 'looping';
-          $router.push('/looping');
-        "
-      >
-        <a class="nav-link" :class="{ active: activeTab('looping') }"
-          >Looping</a
-        >
-      </li>
-      <li
-        class="nav-item"
-        @click="
-          active = 'computed-properties';
-          $router.push('/computed-properties');
-        "
-      >
-        <a
-          class="nav-link"
-          :class="{ active: activeTab('computed-properties') }"
-          >Computed Properties</a
-        >
-      </li>
-      <li
-        class="nav-item"
-        @click="
-          active = 'conditional-rendering';
-          $router.push('/conditional-rendering');
-        "
-      >
-        <a
-          class="nav-link"
-          :class="{ active: activeTab('conditional-rendering') }"
-          >Conditional Rendering</a
-        >
-      </li>
-      <li
-        class="nav-item"
-        @click="
-          active = 'events';
-          $router.push('/events');
-        "
-      >
-        <a class="nav-link" :class="{ active: activeTab('events') }">Events</a>
-      </li>
-    </ul>
+      <router-link :to="{ name: 'conditional-rendering' }">
+        Conditional Rendering
+      </router-link>
+      <router-link :to="{ name: 'events' }">Events</router-link>
+    </div>
   </div>
 </template>
 
-
-<script>
-export default {
-  name: "navbar",
-  setup() {
-    return {
-      activeTab(curr) {
-        // return curr == this.$route.name;
-      },
-    };
-  },
-};
-</script>
-
-
-<style scoped>
-.nav-item {
-  background-color: rgb(28, 140, 209);
-  border-radius: 5px;
-  color: white;
-  cursor: pointer;
+<style lang="scss" scoped>
+a {
+  text-decoration: none;
 }
-
-.nav-item:hover {
-  background-color: lightblue;
-  border-radius: 5px;
-  color: inherit;
+a:not(.no-high) {
+  padding: 1.2rem;
+  color: var(--secondary);
+  border-bottom: 4px solid transparent;
+  padding-bottom: 1.2rem;
+  transition: all 0.3s linear;
+  &.router-link-exact-active {
+    color: var(--info);
+    border-color: var(--info);
+  }
+  &:hover {
+    background: var(--dark);
+    color: var(--light);
+  }
 }
 </style>
