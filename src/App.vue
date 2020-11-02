@@ -1,55 +1,35 @@
 <template>
-  <div id="app" class="container outside">
-    <div class="row justify-content-center">
-      <div class="jumbotron col-12">
-        <h1 class="display-5">Playground for <img alt="Vue logo" height="50" src="./assets/logo.png">ue</h1>
-        <hr class="my-4">
-      </div>
-    </div>
-    <div class="border text-left">
-      <navbar></navbar>
-      <router-view />
-    </div>
+  <div id="app">
+    <navbar></navbar>
+    <router-view />
   </div>
 </template>
 
 <script>
-  import Navbar from "./components/Navbar.vue"
-  export default {
-    components: { Navbar }
-  }
+import Navbar from "./components/Navbar";
+export default {
+  components: { Navbar },
+};
 </script>
-
-<style>
-  .border {
-    border: 1px solid rgba(154, 154, 156, .4);
-    border-radius: 5px;
-  }
-
-  #app {
-    font-family: 'Avenir', Helvetica, Arial, sans-serif;
-    font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-    text-align: center;
-    color: #2c3e50;
-    padding-block-end: 2rem;
-  }
-
-  #nav {
-    padding: 30px;
-  }
-
-  #nav a {
-    font-weight: bold;
-    color: #2c3e50;
-  }
-
-  #nav a.router-link-exact-active {
-    color: #42b983;
-  }
-
-  .outside {
-    max-width: 75%;
-  }
+<style lang="scss">
+body{
+  background: #f8f8f8;
+  font-family: Avenir, Helvetica, Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  color: #2c3e50;
+  font-size: 16pt;
+  line-height: 2.5rem;
+}
+#app {
+  padding-bottom: 1.5rem;
+}
+pre{
+  padding: 0 !important;
+}
+h1,h2,h3,h4,h5,h6{
+  border-bottom: 1px solid var(--light);
+  padding-bottom: .75rem;
+  margin: 1.2rem 0;
+}
 </style>
