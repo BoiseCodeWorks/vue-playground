@@ -59,28 +59,32 @@
           <p>
             Add some conditionals to the following directives to determine if
             they should render or not. In the components data add a property
-            called "num" and set its value to 1.
+            called "grade" and set its value to 50.
           </p>
           <p>
             Did the correct element show up? Practice changing the number value
             to make sure you can get the correct element to display. Feel free
             to add another condition.
           </p>
-          <!-- v-if comparing num and 1 -->
+          <!-- v-if comparing grade and 90 -->
           <div>
-            <p>The Number is 1.</p>
+            <p>The grade is 'A'.</p>
           </div>
-          <!-- v-else-if comparing num and 2 -->
+          <!-- v-else-if comparing grade and 80 -->
           <div>
-            <p>The Number is 2.</p>
+            <p>The grade is 'B'.</p>
           </div>
-          <!-- v-else-if comparing num and 3 -->
+          <!-- v-else-if comparing grade and 70 -->
           <div>
-            <p>The Number is 3.</p>
+            <p>The grade is 'C'.</p>
+          </div>
+          <!-- v-else-if comparing grade and 60 -->
+          <div>
+            <p>The grade is 'D'.</p>
           </div>
           <!-- v-else to display if all the others fail -->
           <div>
-            <p>The Number is not 1, 2, or 3.</p>
+            <p>The grade is 'F'.</p>
           </div>
         </div>
         <div class="border p-1">

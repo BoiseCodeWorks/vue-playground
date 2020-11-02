@@ -14,8 +14,8 @@
         </p>
         <p>Example: {{ state.handleEg }}</p>
         <p>
-          Vue parses your HTML and looks specifically for the double
-          curlies(aka: handlebars, mustache brackets). When Vue comes across a
+          Vue parses your HTML and looks specifically for the double curly
+          braces (aka: handlebars, mustache brackets). When Vue comes across a
           set of these brackets it essentially says this: Pause HTML
           {{ state.val }} Restart HTML.
         </p>
@@ -49,7 +49,7 @@ document.getElementById('player').innerHTML = html;</code></pre>
           project. Look at the example below to see the Vue approach.
         </p>
         <h5>Vue Approach</h5>
-<pre><code class="language-html">&lt;div class="player-card"&gt;
+        <pre><code class="language-html">&lt;div class="player-card"&gt;
     &lt;div&gt;
         &lt;img :src="player.photo" /&gt;
     &lt;/div&gt;
@@ -73,7 +73,8 @@ document.getElementById('player').innerHTML = html;</code></pre>
         </p>
         <p>
           You might not see the power of these expressions yet, but thats okay.
-          Try the exercises below and then move on to the next section.
+          Try the exercises below (located in the Expressions Excercise.vue) and
+          then move on to the next section.
         </p>
       </div>
       <exercise></exercise>

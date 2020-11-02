@@ -7,7 +7,7 @@
           <p>
             Use the @click directive to add an event listener to the button
             below and set its value to increase a property called "counter" by
-            1. Now in the components data, add a property called "counter" and
+            1. Now in the components state, add a property called "counter" and
             set its value to 0. In the paragraph element reference the "counter"
             property to display its value.
           </p>
@@ -20,7 +20,7 @@
           <p>
             Use the @click directive to add an event listener to the button
             below and set its value to the method name "greet". Now in the
-            components data, add a property called "greeting" and set its value
+            components state, add a property called "greeting" and set its value
             to "Hello World!". On the components methods property, create a
             method called "greet". In the method called "greet", reference the
             "greeting" property and pass its value into an alert().
@@ -46,6 +46,7 @@ export default {
     });
     return {
       state,
+      // Add your methods here
     };
   },
   components: {},

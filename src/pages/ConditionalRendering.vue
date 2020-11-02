@@ -10,13 +10,13 @@
           directive to the element. You can either supply a direct boolean
           value, or an expression that will evaluate to one.
         </p>
-        <pre><code class="language-html">{{state.playerCard}}</code></pre>
+        <pre><code class="language-html">{{state.playerCardVal}}</code></pre>
         <p>
           We directly supplied a value of true to the v-if directive of the
           "player-card" element and so it will be rendered to the screen.
         </p>
         <h5>Using The v-if Directive With A Referenced Value</h5>
-        <pre><code class="language-html">{{state.playerCard}}</code></pre>
+        <pre><code class="language-html">{{state.playerCardRef}}</code></pre>
         <pre><code class="language-javascript">export default {
   setup() {
       const state = reactive({
@@ -73,11 +73,12 @@
         </p>
         <p>
           Just like the v-if directive, v-show can accept a direct boolean
-          value, or a conditional from our javascript in the component.
+          value, or a conditional from our javascript in the component. Unlike
+          v-if, there is no "else" statement for v-show.
         </p>
         <pre><code class="language-html">{{state.playerCard}}</code></pre>
       </div>
-      <hr>
+      <hr />
       <h1>Exercise</h1>
       <exercise></exercise>
     </div>
@@ -98,7 +99,23 @@ export default {
         position: "{{ player.position }}",
         number: "{{ player.number }}",
       },
-      playerCard: `
+      playerCardVal: `
+  <div class="player-card" v-if="true == true">
+    <div>
+      <img :src="player.photo" />
+    </div>
+    <div>
+      <span>{{player.name}}</span>
+    </div>
+    <div>
+      <span>{{player.position}}</span>
+    </div>
+    <div>
+      <span>{{player.number}}</span>
+    </div>
+  </div>
+`,
+      playerCardRef: `
   <div class="player-card" v-if="state.showPlayer">
     <div>
       <img :src="player.photo" />

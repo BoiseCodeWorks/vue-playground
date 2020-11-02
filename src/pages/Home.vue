@@ -120,6 +120,13 @@
               scene processes. Examples: v-if, v-for, v-show
             </p>
           </li>
+          <li class="list-group-item border">
+            <p class="mb-0">
+              <b class="m-0">Reactive</b> - When the data on the page updates
+              automatically based on the state of the application, the user is
+              not required to refresh the page to get the needed data.
+            </p>
+          </li>
         </ul>
       </div>
     </div>

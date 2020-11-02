@@ -21,10 +21,12 @@ export default {
   setup() {
     const state = reactive;
     ({
+      // After getting this to work, challenge yourself to add an input field and bind message to it, so as you type the messag gets reversed!
       message: "Hello World!",
-      reversedMessage: computed(() =>
-        this.message.split("").reverse().join("")
-      ),
+      reversedMessage: computed(() => {
+        // all computed properties must return a value, what do you want this one to return?
+        return ""
+      }),
     });
     return {
       state,

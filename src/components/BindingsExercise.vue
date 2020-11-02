@@ -7,9 +7,9 @@
           <p>
             Use the property "message" on the data object in our component for
             one way data binding to display the message in our template. Replace
-            the comment with the property name "message" in the curlies. Check
-            out what happens below. Now go change the value of message in our
-            components script area and see what happens.
+            the comment with the property name "state.message" in the curlies.
+            Check out what happens below. Now go change the value of message in
+            our components script area and see what happens.
           </p>
           <p>{{}}</p>
         </div>
@@ -21,9 +21,9 @@
             html to display the value. Notice Vue will rerender each time the
             value changes.
           </p>
-          <!-- add a v-model to this input below called "myName"-->
+          <!-- add a v-model to this input that will reference "myName" within the state object-->
           <input />
-          <!-- reference "myName" -->
+          <!-- reference "myName" from the state -->
           <p>{{}}</p>
         </div>
         <div class="border p-1">
@@ -36,7 +36,7 @@
             value changes.
           </p>
           <div class="red">
-            <!-- add a class binding attribute to the p tag -->
+            <!-- add a class binding attribute to the p tag that references the state isActive value -->
             <p>This text will turn green on active</p>
           </div>
         </div>

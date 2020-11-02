@@ -18,8 +18,8 @@
           Note the syntax is @click compared to onclick in vanilla javascript.
         </p>
         <pre><code class="language-html">&lt;div&gt;
-  &lt;button @click="counter += 1"&gt;Add 1&lt;/button&gt;
-  &lt;p&gt;The button has been clicked {{ counter }} times.&lt;/p&gt;
+  &lt;button @click="state.counter += 1"&gt;Add 1&lt;/button&gt;
+  &lt;p&gt;The button has been clicked {{ state.counterEl }} times.&lt;/p&gt;
 &lt;/div&gt;</code></pre>
         <pre><code class="language-javascript">export default {
   name: "events-exercise",
@@ -33,18 +33,29 @@
   }
 }</code></pre>
         <p>Result:</p>
-        <button class="btn btn-outline btn-primary m-2" @click="counter += 1">Add 1</button>
-        <p>The button has been clicked <kbd>{{ counter }} times.</kbd></p>
+        <button
+          class="btn btn-outline btn-primary m-2"
+          @click="state.counter += 1"
+        >
+          Add 1
+        </button>
+        <p>
+          The button has been clicked <kbd>{{ state.counter }} times.</kbd>
+        </p>
         <h5>Events Calling A Method</h5>
         <p>
           Using a method to handle what happens can be nice and becomes
           essential if there is much logic going on. The value added to the
           @click is the name of the method located in the components javascript.
+          As a note we will put these outside of the state object, because they
+          are not 'data', and instead are functionality, you may see this
+          written several different ways, however this is the style we prefer.
         </p>
         <p>
-          Note that we are using the "this" keyword in our methods javascript to
-          ensure it uses the greeting property on the specific instance of the
-          component.
+          Note that we are using the "state" keyword in our methods javascript
+          to ensure it uses the greeting property on the specific instance of
+          the local state object. However since the method is directly on the
+          returned object from setup, we can call it directly
         </p>
         <pre><code class="language-html">&lt;div&gt;
   &lt;button @click="greet"&gt;Greet&lt;/button&gt;
@@ -58,14 +69,16 @@
     return {
       state,
       greet(){
-        alert(this.greeting)
+        alert(state.greeting)
       }
     }
   },
 }</code></pre>
-        <button class="btn btn-primary btn-outline m-2" @click="greet">Greet</button>
+        <button class="btn btn-primary btn-outline m-2" @click="greet">
+          Greet
+        </button>
       </div>
-      <hr>
+      <hr />
       <h1>Exercise</h1>
       <exercise></exercise>
     </div>
@@ -74,20 +87,22 @@
 
 
 <script>
+import { reactive } from "vue";
 import Exercise from "../components/EventsExercise.vue";
 export default {
   name: "Events",
-  data() {
-    return {
+  setup() {
+    const state = reactive({
+      counterEl: '{{state.counter}}',
       counter: 0,
       greeting: "Hello World!",
-    };
-  },
-  computed: {},
-  methods: {
-    greet() {
-      alert(this.greeting);
-    },
+    })
+    return {
+      state,
+      greet() {
+        alert(state.greeting);
+      },
+    }
   },
   components: { Exercise },
 };
