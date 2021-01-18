@@ -62,7 +62,7 @@ export default {
       val2: "{{ reversedMessage }}",
       message: "Hello World!",
       reversedMessage: computed(() => {
-        this.message.split("").reverse().join("");
+        state.message.split("").reverse().join("");
       }),
     });
     return {
