@@ -24,7 +24,7 @@
                             setup() {
                               const state = reactive({
                                 message: "Hello World!"
-                                reversedMessage: computed(()=> this.message.split("").reverse().join('')) 
+                                reversedMessage: computed(()=> state.message.split("").reverse().join('')) 
                             })
                             return {
                               state
