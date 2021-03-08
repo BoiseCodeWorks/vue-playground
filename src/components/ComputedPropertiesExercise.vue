@@ -24,7 +24,7 @@ export default {
       message: "Hello World!",
       reversedMessage: computed(() => {
         // all computed properties must return a value, what do you want this one to return?
-        return ""
+        return "";
       }),
     });
     return {

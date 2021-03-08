@@ -58,8 +58,8 @@ export default {
   name: "computed-properties",
   setup() {
     const state = reactive({
-      val: "{{ message }}",
-      val2: "{{ reversedMessage }}",
+      val: "{{ state.message }}",
+      val2: "{{ state.reversedMessage }}",
       message: "Hello World!",
       reversedMessage: computed(() => {
         state.message.split("").reverse().join("");
