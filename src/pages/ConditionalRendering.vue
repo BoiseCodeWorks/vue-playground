@@ -95,39 +95,39 @@ export default {
     const state = reactive({
       showPlayer: true,
       player: {
-        name: "{{ player.name }}",
-        position: "{{ player.position }}",
-        number: "{{ player.number }}",
+        name: "{{ state.player.name }}",
+        position: "{{ state.player.position }}",
+        number: "{{ state.player.number }}",
       },
       playerCardVal: `
-  <div class="player-card" v-if="true == true">
+  <div class="state.player-card" v-if="true == true">
     <div>
-      <img :src="player.photo" />
+      <img :src="state.player.photo" />
     </div>
     <div>
-      <span>{{player.name}}</span>
+      <span>{{state.player.name}}</span>
     </div>
     <div>
-      <span>{{player.position}}</span>
+      <span>{{state.player.position}}</span>
     </div>
     <div>
-      <span>{{player.number}}</span>
+      <span>{{state.player.number}}</span>
     </div>
   </div>
 `,
       playerCardRef: `
-  <div class="player-card" v-if="state.showPlayer">
+  <div class="state.player-card" v-if="state.showPlayer">
     <div>
-      <img :src="player.photo" />
+      <img :src="state.player.photo" />
     </div>
     <div>
-      <span>{{player.name}}</span>
+      <span>{{state.player.name}}</span>
     </div>
     <div>
-      <span>{{player.position}}</span>
+      <span>{{state.player.position}}</span>
     </div>
     <div>
-      <span>{{player.number}}</span>
+      <span>{{state.player.number}}</span>
     </div>
   </div>
 `,
