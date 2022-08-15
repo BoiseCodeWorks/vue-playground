@@ -52,7 +52,7 @@
           On some occasions you will need to edit the code of the component to
           complete the exercise.
         </p>
-        <pre class="language-html"><code>{{state.code}}</code></pre>
+        <pre class="language-markup"><code>{{state.code}}</code></pre>
       </div>
     </div>
     <div class="row">
@@ -136,10 +136,13 @@
 
 
 <script>
-import { reactive } from "vue";
+import { onMounted, reactive } from "vue";
 export default {
   name: "home",
   setup() {
+    // @ts-ignore
+    onMounted(() => Prism.highlightAll())
+    
     const state = reactive({
       code: `
     <div class="vue-exercises">

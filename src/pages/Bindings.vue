@@ -18,7 +18,7 @@
           components state object with the double curlies {{ state.val }}.
         </p>
         <p>For example:</p>
-        <pre><code class="language-html">&lt;p&gt;
+        <pre><code class="language-markup">&lt;p&gt;
   Results for message: <span>{{ state.val3 }}</span>
 &lt;/p&gt;</code></pre>
         <pre><code class="language-javascript">export default {
@@ -56,7 +56,7 @@
           render that new value in our html.
         </p>
         <p>For example:</p>
-        <pre><code class="language-html">{{state.note}}
+        <pre><code class="language-markup">{{state.note}}
 &lt;input v-model="state.myName"&gt;
 &lt;p&gt;Hello <span>{{ state.val2 }},</span>&lt;/p&gt;</code></pre>
         <pre><code class="language-javascript">export default {
@@ -90,7 +90,7 @@
         </p>
         <p>For example:</p>
         <h5>Class Binding</h5>
-        <pre><code class="language-html bg-light">{{state.note2}}
+        <pre><code class="language-markup">{{state.note2}}
 &lt;p :class="{ active: state.isActive }"&gt;This text will turn green on active&lt;/p&gt;</code></pre>
         <pre><code class="language-javascript">export default {
     name: 'bindings-exercise',
@@ -104,7 +104,7 @@
         }
     }
 }</code></pre>
-        <pre><code class="language-html">
+        <pre><code class="language-markup">
 &lt;style&gt;
 p {
   color: red;
@@ -138,11 +138,14 @@ p {
 
 
 <script>
-import { reactive } from "vue";
+import { onMounted, reactive } from "vue";
 import Exercise from "../components/BindingsExercise.vue";
 export default {
   name: "bindings",
   setup() {
+    // @ts-ignore
+    onMounted(() => Prism.highlightAll())
+    // NOTE typically state will be abstracted to a global AppState
     const state = reactive({
       note:
         '<!--The data property "myName" is being watched and will cause a rerender on value change-->',
@@ -154,6 +157,7 @@ export default {
       message: "Hello World!",
       myName: "Type your name here",
     });
+
     return {
       state,
     };

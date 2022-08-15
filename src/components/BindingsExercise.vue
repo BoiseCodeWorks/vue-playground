@@ -51,6 +51,7 @@ import { reactive } from "vue";
 export default {
   name: "binding-exercises",
   setup() {
+    // NOTE typically state will be abstracted to a global AppState
     const state = reactive({
       //create a property called myName and set its value to "type your name here"
       message: "Super secret message here!",

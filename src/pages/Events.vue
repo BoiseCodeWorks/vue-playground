@@ -17,7 +17,7 @@
         <p>
           Note the syntax is @click compared to onclick in vanilla javascript.
         </p>
-        <pre><code class="language-html">&lt;div&gt;
+        <pre><code class="language-markup">&lt;div&gt;
   &lt;button @click="state.counter += 1"&gt;Add 1&lt;/button&gt;
   &lt;p&gt;The button has been clicked {{ state.counterEl }} times.&lt;/p&gt;
 &lt;/div&gt;</code></pre>
@@ -57,7 +57,7 @@
           the local state object. However since the method is directly on the
           returned object from setup, we can call it directly
         </p>
-        <pre><code class="language-html">&lt;div&gt;
+        <pre><code class="language-markup">&lt;div&gt;
   &lt;button @click="greet"&gt;Greet&lt;/button&gt;
 &lt;/div&gt;</code></pre>
         <pre><code class="language-javascript">export default {
@@ -87,11 +87,14 @@
 
 
 <script>
-import { reactive } from "vue";
+import { onMounted, reactive } from "vue";
 import Exercise from "../components/EventsExercise.vue";
 export default {
   name: "Events",
   setup() {
+    // @ts-ignore
+    onMounted(() => Prism.highlightAll())
+    
     const state = reactive({
       counterEl: '{{state.counter}}',
       counter: 0,

@@ -127,12 +127,13 @@ import { reactive } from "vue";
 export default {
   name: "condtional-rendering-exercise",
   setup() {
+    // NOTE typically state will be abstracted to a global AppState
     const state = reactive({
       //add a property to toggle the player-card here.
       //add a property to set the number value here.
       player: {
-        photo: "https://robohash.org/D$",
-        name: "D$",
+        photo: "https://robohash.org/Mick",
+        name: "Mick",
         position: "WR",
         number: 4,
       },

@@ -53,22 +53,23 @@ import { reactive } from "vue";
 export default {
   name: "looping-exercise",
   setup() {
+    // NOTE typically state will be abstracted to a global AppState
     const state = reactive({
       blog: {
         title: "Using v-for in Vue",
         description: "How to use a v-for directive in Vue.",
-        author: "D$",
+        author: "Mick",
       },
       players: [
         {
-          photo: "https://robohash.org/D$",
-          name: "D$",
+          photo: "https://robohash.org/Mick",
+          name: "Mick",
           position: "WR",
           number: 4,
         },
         {
-          photo: "https://robohash.org/Mark",
-          name: "Mark",
+          photo: "https://robohash.org/Jeremy",
+          name: "Jeremy",
           position: "TE",
           number: 13,
         },

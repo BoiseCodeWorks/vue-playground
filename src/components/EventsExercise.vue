@@ -39,6 +39,7 @@ import { reactive } from "vue";
 export default {
   name: "events-exercise",
   setup() {
+    // NOTE typically state will be abstracted to a global AppState
     const state = reactive({
       //add property called "counter"
       //add property called "greeting"

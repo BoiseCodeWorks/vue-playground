@@ -9,30 +9,28 @@
           Another reason to use computed properties is they give us the ability
           to access the same computed value in several places in the template.
         </p>
-        <pre>
-                    <code class="language-html">
-                        &lt;div class="reverse-message"&gt;
-                            &lt;p&gt;Original Message: {{state.val}}&lt;/p&gt;
-                            &lt;p&gt;Computed Reversed Message: {{state.val2}}&lt;/p&gt;
-                        &lt;/div&gt;
-                    </code>
-                </pre>
-        <pre>
-                    <code class="language-javascript">
-                        export default {
-                            name: 'computed-properties-exercise',
-                            setup() {
-                              const state = reactive({
-                                message: "Hello World!"
-                                reversedMessage: computed(()=> state.message.split("").reverse().join('')) 
-                            })
-                            return {
-                              state
-                            }
-                          }
-                        }
-                    </code>
-                </pre>
+<pre>
+<code class="language-markup">
+&lt;div class="reverse-message"&gt;
+    &lt;p&gt;Original Message: {{state.val}}&lt;/p&gt;
+    &lt;p&gt;Computed Reversed Message: {{state.val2}}&lt;/p&gt;
+&lt;/div&gt;</code>
+</pre>
+<pre>
+<code class="language-javascript">
+export default {
+    name: 'computed-properties-exercise',
+    setup() {
+      const state = reactive({
+        message: "Hello World!"
+        reversedMessage: computed(()=> state.message.split("").reverse().join('')) 
+    })
+    return {
+      state
+    }
+  }
+}</code>
+</pre>
         <p>
           Notice the "reversedMessage" reference is accessing a property on the
           state that happens to be a method that is set up to return a value.
@@ -52,11 +50,14 @@
 
 
 <script>
-import { computed, reactive } from "vue";
+import { computed, onMounted, reactive } from "vue";
 import Exercise from "../components/ComputedPropertiesExercise.vue";
 export default {
   name: "computed-properties",
   setup() {
+    // @ts-ignore
+    onMounted(() => Prism.highlightAll())
+    
     const state = reactive({
       val: "{{ state.message }}",
       val2: "{{ state.reversedMessage }}",

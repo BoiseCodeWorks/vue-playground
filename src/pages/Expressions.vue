@@ -49,7 +49,7 @@ document.getElementById('player').innerHTML = html;</code></pre>
           project. Look at the example below to see the Vue approach.
         </p>
         <h5>Vue Approach</h5>
-        <pre><code class="language-html">&lt;div class="player-card"&gt;
+        <pre><code class="language-markup">&lt;div class="player-card"&gt;
     &lt;div&gt;
         &lt;img :src="player.photo" /&gt;
     &lt;/div&gt;
@@ -83,11 +83,14 @@ document.getElementById('player').innerHTML = html;</code></pre>
 </template>
 
 <script>
-import { reactive } from "vue";
+import { onMounted, reactive } from "vue";
 import Exercise from "../components/ExpressionsExercise.vue";
 export default {
   name: "expressions",
   setup() {
+    // @ts-ignore
+    onMounted(() => Prism.highlightAll())
+    
     const state = reactive({
       val: "{{ Evaluate Javascript Code }}",
       player: {

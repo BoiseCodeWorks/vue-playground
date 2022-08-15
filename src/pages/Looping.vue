@@ -15,7 +15,7 @@
           things to consider.
         </p>
         <p>Take a look at our player-card from the previous lesson</p>
-        <pre><code class="language-html">{{state.playerCard}}</code></pre>
+        <pre><code class="language-markup">{{state.playerCard}}</code></pre>
         <p>
           This snippet of HTML is currently set up to render a single player to
           the screen. Ideally we want all of the players to render using this
@@ -23,7 +23,7 @@
           tedious and labor intensive.
         </p>
         <p>Now look at how we can utilize the v-for directive.</p>
-        <pre><code class="language-html">&lt;div class="player-card" v-for="player in state.players"&gt;
+        <pre><code class="language-markup">&lt;div class="player-card" v-for="player in state.players"&gt;
     {{state.playerCard}}
 &lt;/div&gt;</code></pre>
         <pre><code class="language-javascript">
@@ -33,14 +33,14 @@ export default {
     const state = reactive({
       players: [
         {
-            photo: "https://robohash.org/D$",
-            name: "D$",
+            photo: "https://robohash.org/Mick",
+            name: "Mick",
             position: "WR",
             number: 4
         },
         {
-            photo: "https://robohash.org/Mark",
-            name: "Mark",
+            photo: "https://robohash.org/Jeremy",
+            name: "Jeremy",
             position: "TE",
             number: 13
         },
@@ -62,8 +62,8 @@ export default {
           player in the array. In the first iteration the value of player is:
         </p>
         <pre><code class="language-javascript">player = {
-  photo: "https://robohash.org/D$",
-  name: "D$",
+  photo: "https://robohash.org/Mick",
+  name: "Mick",
   position: "WR",
   number: 4
 }</code></pre>
@@ -78,7 +78,7 @@ export default {
           is always the item itself, the second is always the index or key. Like
           so:
         </p>
-        <pre><code class="language-html">&lt;div class="player-card" v-for="(player, index) in state.players"&gt;
+        <pre><code class="language-markup">&lt;div class="player-card" v-for="(player, index) in state.players"&gt;
   &lt;h5&gt;Player {{ state.index }}&lt;/h5&gt;{{state.playerCard}}&lt;/div&gt;</code></pre>
         <p>Results:</p>
         <div class="d-flex align-items-center justify-content-around flex-wrap">
@@ -109,7 +109,7 @@ export default {
           directive to automatically loop over the objects properties and gain
           access to the key and value in the current iteration to print.
         </p>
-        <pre><code class="language-html">&lt;div class="blog" v-for="(value, key) in state.blog" :key="key"&gt;
+        <pre><code class="language-markup">&lt;div class="blog" v-for="(value, key) in state.blog" :key="key"&gt;
   &lt;p&gt;
     {{state.val2}}
   &lt;/p&gt;
@@ -123,11 +123,14 @@ export default {
 </template>
 
 <script>
-import { reactive } from "vue";
+import { onMounted, reactive } from "vue";
 import Exercise from "../components/LoopingExercise.vue";
 export default {
   name: "looping",
   setup() {
+    // @ts-ignore
+    onMounted(() => Prism.highlightAll())
+    
     const state = reactive({
       val: "{{ }}",
       val2: "{{ key }}: {{ value }}",
@@ -156,18 +159,18 @@ export default {
       blog: {
         title: "Using v-for in Vue",
         description: "How to use a v-for directive in Vue.",
-        author: "D$",
+        author: "Mick",
       },
       players: [
         {
-          photo: "https://robohash.org/D$",
-          name: "D$",
+          photo: "https://robohash.org/Mick",
+          name: "Mick",
           position: "WR",
           number: 4,
         },
         {
-          photo: "https://robohash.org/Mark",
-          name: "Mark",
+          photo: "https://robohash.org/Jeremy",
+          name: "Jeremy",
           position: "TE",
           number: 13,
         },
