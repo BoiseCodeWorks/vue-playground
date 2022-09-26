@@ -104,10 +104,12 @@ export default {
         </div>
         <h5>Looping over an Objects Properties</h5>
         <p>
-          In our components data we could also have a blog object with the
-          properties "title", "description", "author". We can use the v-for
-          directive to automatically loop over the objects properties and gain
-          access to the key and value in the current iteration to print.
+          v-for can also be used to loop over objects, not just arrays.  When a v-for loops over an object, instead of an index and value,
+          the variables it aliases out are the `key : value` pairs of the object.  
+          In our components data we have a blog object with the
+          keys "title", "description", "author". We can use the v-for
+          directive to automatically loop over the objects keys and gain
+          access to the key and value in the current iteration and print them to the page.
         </p>
         <pre><code class="language-markup">&lt;div class="blog" v-for="(value, key) in state.blog" :key="key"&gt;
   &lt;p&gt;
